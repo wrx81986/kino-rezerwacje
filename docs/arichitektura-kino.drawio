@@ -1,0 +1,40 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Strona-1" id="xboqWY3-4Z3y0C7x9dqa">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Owzwql7y0sPPV_a4EUzp-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="&lt;font style=&quot;font-size: 32px;&quot;&gt;Front-end&lt;/font&gt;" vertex="1">
+          <mxGeometry height="100" width="460" x="250" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Owzwql7y0sPPV_a4EUzp-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="&lt;font style=&quot;font-size: 32px;&quot;&gt;Back-end&lt;br&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="100" width="460" x="250" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="Owzwql7y0sPPV_a4EUzp-3" edge="1" parent="1" source="Owzwql7y0sPPV_a4EUzp-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;innerLoopWaypoints=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;defaultLabelBackgroundColor=page;" target="Owzwql7y0sPPV_a4EUzp-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Owzwql7y0sPPV_a4EUzp-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;" value="&lt;font style=&quot;font-size: 32px;&quot;&gt;Baza danych&lt;/font&gt;" vertex="1">
+          <mxGeometry height="100" width="460" x="250" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="Owzwql7y0sPPV_a4EUzp-8" parent="1" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;direction=south;notch=0;" value="" vertex="1">
+          <mxGeometry height="100" width="70" x="379" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="Owzwql7y0sPPV_a4EUzp-9" parent="1" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;direction=north;notch=0;" value="" vertex="1">
+          <mxGeometry height="100" width="70" x="480" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="Owzwql7y0sPPV_a4EUzp-10" parent="1" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;direction=south;notch=0;" value="" vertex="1">
+          <mxGeometry height="100" width="70" x="480" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="Owzwql7y0sPPV_a4EUzp-11" parent="1" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;direction=north;notch=0;" value="" vertex="1">
+          <mxGeometry height="100" width="70" x="379" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="Owzwql7y0sPPV_a4EUzp-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;HTTP / JSON&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="130" x="570" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="Owzwql7y0sPPV_a4EUzp-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;&lt;p&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Firebase Admin SDK&lt;/font&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="120" x="580" y="460" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
