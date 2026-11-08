@@ -1,0 +1,39 @@
+
+[
+  {
+    "id": 1,
+    "title": "Diuna: Część Druga",
+    "genre": "Sci-Fi / Przygodowy",
+    "duration": "166 min",
+    "rating": "8.5",
+    "description": "Paul Atryda łączy siły z Fremenami, aby pomścić swoją rodzinę.",
+    "image": "https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Interstellar",
+    "genre": "Sci-Fi / Dramat",
+    "duration": "169 min",
+    "rating": "8.7",
+    "description": "Grupa astronautów wyrusza w podróż poza granice naszej galaktyki.",
+    "image": "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Incepcja",
+    "genre": "Sci-Fi / Thriller",
+    "duration": "148 min",
+    "rating": "8.8",
+    "description": "Zespół specjalistów potrafi przenikać do ludzkich snów.",
+    "image": "https://image.tmdb.org/t/p/w500/oYuLEt3zVCKq57qu2F8dT7NIa6f.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Joker",
+    "genre": "Dramat / Thriller",
+    "duration": "122 min",
+    "rating": "8.4",
+    "description": "Historia człowieka, którego życie prowadzi do przemiany w Jokera.",
+    "image": "https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg"
+  }
+]
