@@ -268,3 +268,139 @@ footer > span {
     gap: 12px;
   }
 }
+
+/* Formularz dodawania i edycji filmów */
+.movie-form {
+  background: #1b1b1b;
+  border: 1px solid #353535;
+  border-radius: 8px;
+  padding: 28px;
+  margin-bottom: 40px;
+}
+
+.movie-form h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
+  color: #d6a64d;
+  margin: 0 0 22px;
+}
+
+.movie-form form {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.movie-form input {
+  width: 100%;
+  min-width: 0;
+  padding: 13px 14px;
+  background: #111;
+  border: 1px solid #383838;
+  border-radius: 4px;
+  color: #f5f5f5;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  outline: none;
+}
+
+.movie-form input:focus {
+  border-color: #d6a64d;
+}
+
+.movie-form input::placeholder {
+  color: #777;
+}
+
+.movie-form button {
+  padding: 13px 18px;
+  background: #d6a64d;
+  border: 1px solid #d6a64d;
+  border-radius: 4px;
+  color: #111;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.movie-form button:hover {
+  background: #edc36f;
+}
+
+.movie-form button[type="button"] {
+  background: transparent;
+  color: #d6a64d;
+}
+
+.movie-form button[type="button"]:hover {
+  background: #292929;
+}
+
+.movie-footer button {
+  padding: 7px 10px;
+  border: 1px solid #d6a64d;
+  border-radius: 3px;
+}
+
+.movie-footer button:hover {
+  background: #d6a64d;
+  color: #111;
+}
+
+@media (max-width: 900px) {
+  .movie-form form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 550px) {
+  .movie-form {
+    padding: 18px;
+  }
+
+  .movie-form form {
+    grid-template-columns: 1fr;
+  }
+}
+/* Komunikaty aplikacji */
+.app-message {
+  padding: 13px 17px;
+  margin: 0 0 20px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.app-message.error {
+  background: rgba(180, 50, 50, 0.12);
+  border: 1px solid #8f3939;
+  color: #ff8585;
+}
+
+.app-message.success {
+  background: rgba(214, 166, 77, 0.1);
+  border: 1px solid #d6a64d;
+  color: #e6b858;
+}
+
+/* Komunikaty aplikacji */
+.app-message {
+  padding: 13px 17px;
+  margin: 0 0 20px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.app-message.error {
+  background: rgba(180, 50, 50, 0.12);
+  border: 1px solid #8f3939;
+  color: #ff8585;
+}
+
+.app-message.success {
+  background: rgba(214, 166, 77, 0.1);
+  border: 1px solid #d6a64d;
+  color: #e6b858;
+}
