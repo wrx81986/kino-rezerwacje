@@ -12,3 +12,5 @@ node_modules/
 .env
 .env.*
 !.env.example
+# Cloud SQL Proxy
+/backend/cloud-sql-proxy.exe

@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "Diuna: Część Druga – Wersja rozszerzona",
+    "genre": "Sci-Fi / Przygodowy",
+    "duration": 180,
+    "rating": 9
+  },
+  {
+    "id": 2,
+    "title": "Interstellar",
+    "genre": "Sci-Fi / Dramat",
+    "duration": 169,
+    "rating": 8.7
+  },
+  {
+    "id": 3,
+    "title": "Incepcja",
+    "genre": "Sci-Fi / Thriller",
+    "duration": 148,
+    "rating": 8.8
+  },
+  {
+    "id": 4,
+    "title": "Joker",
+    "genre": "Dramat / Thriller",
+    "duration": 122,
+    "rating": 8.4
+  }
+]
