@@ -31,6 +31,10 @@ jobs:
         working-directory: frontend
         run: npm run build
 
+      - name: Sprawdzenie jakości kodu frontendu
+        working-directory: frontend
+        run: npm run lint
+
   backend:
     name: Backend Check
     runs-on: ubuntu-latest
