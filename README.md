@@ -248,3 +248,5 @@ Zmiany w kodzie są zapisywane za pomocą commitów i przesyłane do zdalnego re
 ## 12. Autor projektu
 
 Projekt indywidualny realizowany w ramach przedmiotu Projekt Zespołowy.
+
+<!-- Test automatycznego pipeline CI -->
