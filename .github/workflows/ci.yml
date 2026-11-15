@@ -53,7 +53,9 @@ jobs:
       - name: Instalacja zależności backendu
         working-directory: backend
         run: npm ci
-
+      - name: Testy backendu
+        working-directory: backend
+        run: npm test
       - name: Sprawdzenie składni backendu
         working-directory: backend
         run: node --check server.js

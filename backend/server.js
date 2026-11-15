@@ -48,7 +48,12 @@ app.use((err, req, res, next) => {
     });
 });
 
-// Uruchomienie serwera
-app.listen(PORT, () => {
-    console.log(`Serwer działa na porcie ${PORT}`);
-});
+// Uruchomienie serwera tylko podczas bezpośredniego startu aplikacji
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`Serwer działa na porcie ${PORT}`);
+    });
+}
+
+// Udostępnienie aplikacji do testów
+module.exports = app;
