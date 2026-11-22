@@ -10,7 +10,7 @@ const movieRoutes = require('./routes/movieRoutes');
 
 // Obsługa komunikacji z frontendem
 app.use(cors({
-    origin: 'http://localhost:5173'
+    origin: process.env.FRONTEND_URL || 'http://localhost:5173'
 }));
 
 // Obsługa danych JSON
