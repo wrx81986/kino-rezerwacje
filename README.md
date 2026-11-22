@@ -245,8 +245,62 @@ Główną gałęzią projektu jest `main`.
 
 Zmiany w kodzie są zapisywane za pomocą commitów i przesyłane do zdalnego repozytorium.
 
-## 12. Autor projektu
+## 12. Igor Jarczewski
 
 Projekt indywidualny realizowany w ramach przedmiotu Projekt Zespołowy.
 
-<!-- Test automatycznego pipeline CI -->
+
+## 13. Bezpieczeństwo infrastruktury i reguły dostępu
+
+Projekt wykorzystuje zarządzane usługi Google Cloud i Firebase. Kontrola dostępu do poszczególnych warstw odbywa się za pomocą konfiguracji sieciowej VPC, ustawień usług oraz uprawnień IAM.
+
+### 13.1. Warstwa prezentacji – Firebase Hosting
+
+| Kierunek | Port | Źródło / cel | Zasada |
+|---|---:|---|---|
+| Inbound | TCP 443 | Internet | Publiczny dostęp do aplikacji przez HTTPS |
+| Inbound | TCP 80 | Internet | Przekierowanie HTTP na HTTPS |
+| Outbound | TCP 443 | Przeglądarka użytkownika → Cloud Run | Komunikacja z REST API przez HTTPS |
+
+Firebase Hosting jest usługą zarządzaną. Reguły ruchu są obsługiwane przez platformę, bez konieczności konfigurowania własnej maszyny wirtualnej ani grupy reguł firewall.
+
+### 13.2. Warstwa aplikacyjna – Cloud Run
+
+| Kierunek | Port | Źródło / cel | Zasada |
+|---|---:|---|---|
+| Inbound | TCP 443 | Internet | Publiczny dostęp do REST API przez HTTPS |
+| Inbound | TCP 80 | Internet | Przekierowanie HTTP na HTTPS |
+| Inbound | TCP 22 | — | Brak dostępu SSH – usługa zarządzana |
+| Inbound | TCP 3389 | — | Brak dostępu RDP – usługa zarządzana |
+| Outbound | TCP 5432 | Cloud SQL – prywatny adres IP 172.28.18.3 | Połączenie z PostgreSQL przez prywatną sieć VPC |
+
+Usługa Cloud Run korzysta z sieci `kino-vpc` i podsieci `kino-app-subnet`. Ruch do prywatnych zakresów adresowych jest kierowany przez VPC.
+
+Backend posiada publiczny punkt dostępu, ponieważ frontend Firebase komunikuje się z REST API bezpośrednio z przeglądarki. Dostęp do wywoływania usługi jest obecnie przyznany przez rolę IAM `roles/run.invoker` dla `allUsers`. Jest to świadoma konfiguracja obecnej architektury, a nie ograniczenie dostępu wyłącznie do Firebase Hosting.
+
+Usługa korzysta z dedykowanego konta `kino-backend-runtime`, któremu przyznano rolę `roles/cloudsql.client` niezbędną do komunikacji z bazą danych.
+
+### 13.3. Warstwa danych – Google Cloud SQL
+
+| Kierunek | Port | Źródło / cel | Zasada |
+|---|---:|---|---|
+| Inbound | TCP 5432 | Backend Cloud Run przez prywatną sieć VPC | Dostęp do PostgreSQL przez prywatny adres IP |
+| Inbound | TCP 5432 | Publiczny Internet (`0.0.0.0/0`) | Brak dostępu – publiczny adres IP wyłączony |
+| Inbound | TCP 3306 | — | Nie dotyczy – projekt korzysta z PostgreSQL |
+| Outbound | — | — | Brak skonfigurowanego publicznego dostępu wychodzącego z bazy |
+
+Instancja Cloud SQL `kino-postgres` nie posiada publicznego adresu IP. Dostęp do bazy odbywa się przez prywatny adres `172.28.18.3` w sieci `kino-vpc`.
+
+Nie skonfigurowano publicznych dozwolonych adresów IP (`authorizedNetworks`). Połączenia z bazą wymagają szyfrowania – ustawienie `sslMode` ma wartość `ENCRYPTED_ONLY`.
+
+### 13.4. Podsumowanie zabezpieczeń
+
+- Baza PostgreSQL jest niedostępna bezpośrednio z publicznego Internetu.
+- Komunikacja z aplikacją i API odbywa się przez HTTPS.
+- Żądania HTTP są przekierowywane na HTTPS.
+- Cloud Run nie udostępnia portów administracyjnych SSH (22) ani RDP (3389).
+- Backend korzysta z dedykowanego konta usługi z ograniczonymi uprawnieniami.
+- Dostęp do Cloud SQL odbywa się przez prywatną sieć VPC.
+- Usługi Firebase Hosting, Cloud Run i Cloud SQL korzystają z zarządzanych mechanizmów bezpieczeństwa Google Cloud.
+
+**Uwaga architektoniczna:** backend jest publicznie dostępny, ponieważ aplikacja frontendowa wywołuje jego API bezpośrednio. Ograniczenie dostępu wyłącznie do warstwy prezentacji wymagałoby zmiany architektury, np. zastosowania pośredniczącego backendu lub dodatkowego mechanizmu uwierzytelniania.
